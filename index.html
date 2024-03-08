@@ -50,17 +50,16 @@
 
     request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
-            // Trạng thái thành công, hiển thị thông tin
-            document.getElementById('status').textContent = request.responseText;
+            document.getElementById('status').textContent = Hoạt Động;
         } else {
             // Xử lý khi có lỗi
-            document.getElementById('status').textContent = 'Đã xảy ra lỗi khi tải trang';
+            document.getElementById('status').textContent = 'Không Hoạt Động';
         }
     };
 
     request.onerror = function() {
         // Xử lý khi có lỗi kết nối
-        document.getElementById('status').textContent = 'Không thể kết nối đến máy chủ';
+        document.getElementById('status').textContent = 'Không Hoạt động';
     };
 
     request.send();
