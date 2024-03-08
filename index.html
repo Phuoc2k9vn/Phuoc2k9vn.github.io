@@ -15,6 +15,56 @@
   <div class="url-container">
     <input type="text" class="url-input" placeholder="/NavidH/index.html">
     <button class="url-button">Save</button>
+    <style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .status-box {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 400px;
+    }
+    #status {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="status-box">
+        <h2>Trạng Thái Web</h2>
+        <p id="status">Đang đợi trạng thái...</p>
+    </div>
+</div>
+
+<script>
+    // Gửi yêu cầu GET đến URL
+    var request = new XMLHttpRequest();
+    request.open('GET', 'URL_CUA_BAN_O_DAY', true);
+
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+            // Trạng thái thành công, hiển thị thông tin
+            document.getElementById('status').textContent = request.responseText;
+        } else {
+            // Xử lý khi có lỗi
+            document.getElementById('status').textContent = 'Đã xảy ra lỗi khi tải trang';
+        }
+    };
+
+    request.onerror = function() {
+        // Xử lý khi có lỗi kết nối
+        document.getElementById('status').textContent = 'Không thể kết nối đến máy chủ';
+    };
+
+    request.send();
+</script>
   </div>
 </body>
 </html>
