@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate QR Codes</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <button id="generate-button">Generate QR Codes</button>
+  <div id="qrcodes-container"></div>
+
+  <script>
+    function generateQRCode(value) {
+      const qr = new QRious({
+        value: value,
+        size: 200,
+      });
+
+      const qrCodeImage = document.createElement('img');
+      qrCodeImage.src = qr.toDataURL('image/png');
+
+      return qrCodeImage;
+    }
+
+    document.getElementById('generate-button').addEventListener('click', () => {
+      fetch('pass.txt')
+        .then(response => response.text())
+        .then(codes => {
+          const codesArray = codes.trim().split('\n');
+          const container = document.getElementById('qrcodes-container');
+          container.innerHTML = '';
+
+          codesArray.forEach(code => {
+            const qrCodeImage = generateQRCode(code);
+            container.appendChild(qrCodeImage);
+          });
+        })
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>
