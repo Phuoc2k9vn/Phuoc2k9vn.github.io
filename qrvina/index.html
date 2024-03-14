@@ -3,6 +3,11 @@
 <head>
   <title>Generate QR Codes</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <style>
+    .qrcode-image {
+      margin-right: 20px;
+    }
+  </style>
 </head>
 <body>
   <button id="generate-button">Generate QR Codes</button>
@@ -17,6 +22,7 @@
 
       const qrCodeImage = document.createElement('img');
       qrCodeImage.src = qr.toDataURL('image/png');
+      qrCodeImage.classList.add('qrcode-image');
 
       return qrCodeImage;
     }
