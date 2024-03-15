@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register and Login</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Register</h1>
+    <form id="registerForm" onsubmit="return register()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required/><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required/><br>
+
+        <label for="ip">IP Address:</label>
+        <input type="text" id="ip" required/><br>
+
+        <input type="submit" value="Register"/>
+    </form>
+
+    <h1>Login</h1>
+    <form id="loginForm" onsubmit="return login()">
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" required/><br>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" required/><br>
+
+        <input type="submit" value="Login"/>
+    </form>
+</body>
+</html>
