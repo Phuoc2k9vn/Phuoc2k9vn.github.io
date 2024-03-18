@@ -73,45 +73,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.getElementById('status').textContent = 'Không Hoạt động';
     };
 
-<button onclick="openDialog()">Tải Hack</button>
-<script>
-function openDialog() {
-  var dialog = document.createElement('dialog');
-  dialog.innerHTML = `
-    <form onsubmit="submitForm(event)">
-      <input type="text" id="codeInput" placeholder="Nhập mã" required>
-      <button type="submit">Xác nhận</button>
-    </form>
-  `;
-  document.body.appendChild(dialog);
-  dialog.showModal();
-}
-
-function submitForm(event) {
-  event.preventDefault();
-  var codeInput = document.getElementById('codeInput');
-  var code = codeInput.value;
-  if (code === 'phuoc2k9evn') {
-    // Tải file khi mã được xác nhận
-    var link = document.createElement('a');
-    link.href = 'khanhacking.crx';
-    link.download = 'Khanhacking';
-    link.click();
-  }
-  closeDialog();
-}
-
-function closeDialog() {
-  var dialog = document.querySelector('dialog');
-  dialog.close();
-  dialog.remove();
-}
-</script>
-
-</body>
-</html>
-    request.send();
-</script>
-  </div>
 </body>
 </html>
