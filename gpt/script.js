@@ -38,7 +38,7 @@ async function callGPT(author, message) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${OPENAI_API_KEY}`
+            'Authorization': `Bearer ${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}`
         },
         body: JSON.stringify(requestBody)
     });
@@ -75,7 +75,7 @@ chatForm.addEventListener('submit', async (e) => {
         // Newline comes in the form of \n from OpenAI. Need to replace it with <br> for html to display it properly.
         const formattedReply = reply.replace(/\n/g, '<br>');
         // Display GPT-3.5's reply
-        chatArea.innerHTML += `<p><strong>Assistant:</strong> ${formattedReply}</p>`;
+        chatArea.innerHTML += `<p><strong>ChatGPT:</strong> ${formattedReply}</p>`;
         // Append assistant's message to pastMessage
         allMessages = allMessages.concat([
             { 'role': 'assistant', 'content': reply }
