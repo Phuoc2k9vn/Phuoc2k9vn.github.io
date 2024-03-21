@@ -8,7 +8,6 @@ const chatForm = document.getElementById('chat-form');
 const inputMessage = document.getElementById('input-message');
 const chatArea = document.querySelector('.chat-area');
 const inputApi = document.getElementById('input-api')
-const buttonApi = document.getElementById('button-api')
 // The OpenAI API key will be provided by the user within the web page.
 let OPENAI_API_KEY;
 // This determines how the assistant behaves. Currently only system message can be editted.
@@ -38,7 +37,7 @@ async function callGPT(author, message) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${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}`
+            'Authorization': `Bearer ${OPENAI_API_KEY}`
         },
         body: JSON.stringify(requestBody)
     });
