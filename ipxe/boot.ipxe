@@ -2,6 +2,6 @@
   
  kernel wimboot
  initrd BOOT/BCD       BCD
- initrd BOOT/BOOT.SDI  BOOT.SDI
- initrd BOOT/BOOT.WIM BOOT.WIM
+ initrd BOOT/BOOT.SDI  boot.sdi
+ initrd BOOT/BOOT.WIM  boot.wim
  boot
