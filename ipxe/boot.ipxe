@@ -1,0 +1,7 @@
+#!ipxe
+  
+ kernel wimboot
+ initrd BOOT/BCD       BCD
+ initrd BOOT/BOOT.SDI  BOOT.SDI
+ initrd BOOT/BOOT.WIM BOOT.WIM
+ boot
